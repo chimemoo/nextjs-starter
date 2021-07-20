@@ -1,3 +1,60 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier", "prettier/react", "next", "next/core-web-vitals"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "arrowFunctions": true,
+      "blockBindings": true,
+      "defaultParams": true,
+      "destructuring": true,
+      "forOf": true,
+      "generators": true,
+      "objectLiteralComputedProperties": true,
+      "objectLiteralShorthandMethods": true,
+      "objectLiteralShorthandProperties": true,
+      "experimentalObjectRestSpread": true,
+      "restParams": true,
+      "spread": true,
+      "templateStrings": true,
+      "modules": true,
+      "classes": true
+    }
+  },
+  "plugins": [
+    "react", "prettier"
+  ],
+  "root": true,
+  "rules": {
+    "comma-dangle": 0,
+    "linebreak-style": 0,
+    "react/prop-types": [ 0 ],
+    "semi": [2, "always"],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "indent": "off",
+    "prettier/prettier": "warn",
+    "no-unused-vars": "warn",
+    "template-curly-spacing" : "off"
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass", // Regex for Component Factory to use,
+      // default to "createReactClass"
+      "pragma": "React",  // Pragma to use, default to "React"
+      "version": "16.8", // React version, default to the latest React stable release
+      "flowVersion": "0.81" // Flow version
+    },
+    "propWrapperFunctions": [ "forbidExtraProps" ] // The names of any functions used to wrap the
+    // propTypes object, e.g. `forbidExtraProps`.
+    // If this isn't set, any propTypes wrapped in
+    // a function will be skipped.
+  }
 }
